@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.s15012.pbl_teamapplication.registration_config">
+
+    <TextView
+        android:id="@+id/registrationConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="会員情報の変更"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <!--  名前情報の変更  -->
+    <TextView
+        android:id="@+id/edit_textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/registrationConfig"
+        android:text="名前"
+        android:textSize="26sp"
+        />
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/edit_textName"
+        android:background="@drawable/frame_style"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        />
+
+    <!-- 住所変更 -->
+
+    <TextView
+        android:id="@+id/edit_textLive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/editName"
+        android:textSize="26sp"
+        android:text="住所"
+        />
+    <EditText
+        android:id="@+id/editLive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/edit_textLive"
+        android:textSize="24sp"
+        android:inputType="textPostalAddress"
+        android:background="@drawable/frame_style"
+        />
+
+    <!--  パスワード変更ボックス  -->
+    <TextView
+        android:id="@+id/edit_textPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/editLive"
+        android:textSize="26sp"
+        android:text="パスワード"
+        />
+    <EditText
+        android:id="@+id/editPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="40sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/edit_textPass"
+        android:textSize="24sp"
+        android:inputType="textVisiblePassword"
+        android:background="@drawable/frame_style"
+        />
+
+    <Button
+        android:id="@+id/editReg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35sp"
+        android:layout_marginTop="30sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:layout_below="@+id/editPass"
+        android:text="登録"
+        android:textSize="26sp"
+        android:background="@drawable/frame_style"
+        />
+
+    <Button
+        android:id="@+id/editCancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35sp"
+        android:layout_marginTop="30sp"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        android:text="キャンセル"
+        android:textSize="24sp"
+        android:layout_below="@+id/editPass"
+        android:background="@drawable/frame_style"
+        />
+
+
+
+
+</RelativeLayout>

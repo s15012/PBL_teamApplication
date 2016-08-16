@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.s15012.pbl_teamapplication.MainActivity">
+
+    <TextView
+        android:id="@+id/memberRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="会員登録"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <!-- 名前入力ボックス -->
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/memberRegistration"
+        android:text="名前"
+        android:textSize="26sp"
+        />
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/textName"
+        android:background="@drawable/frame_style"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        />
+
+    <!-- 住所入力ボックス -->
+
+    <TextView
+        android:id="@+id/textLive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/regName"
+        android:textSize="26sp"
+        android:text="住所"
+        />
+    <EditText
+        android:id="@+id/regLive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/textLive"
+        android:textSize="24sp"
+        android:inputType="textPostalAddress"
+        android:background="@drawable/frame_style"
+        />
+
+
+    <!--  ログインID入力ボックス  -->
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/regLive"
+        android:textSize="26sp"
+        android:text="ログインID"
+        />
+    <EditText
+        android:id="@+id/regLoginID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/textLogin"
+        android:textSize="24sp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/frame_style"
+        />
+
+
+    <!--  パスワード入力ボックス  -->
+    <TextView
+        android:id="@+id/textPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/regLoginID"
+        android:textSize="26sp"
+        android:text="パスワード"
+        />
+    <EditText
+        android:id="@+id/regPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_below="@+id/textPass"
+        android:textSize="24sp"
+        android:inputType="textVisiblePassword"
+        android:background="@drawable/frame_style"
+        />
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/Registration_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35sp"
+        android:layout_marginTop="30sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:layout_below="@+id/regPass"
+        android:text="登録"
+        android:textSize="26sp"
+        android:background="@drawable/frame_style"
+        />
+
+    <Button
+        android:id="@+id/Cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35sp"
+        android:layout_marginTop="30sp"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        android:text="キャンセル"
+        android:textSize="24sp"
+        android:layout_below="@+id/regPass"
+        android:background="@drawable/frame_style"
+        />
+
+
+</RelativeLayout>
