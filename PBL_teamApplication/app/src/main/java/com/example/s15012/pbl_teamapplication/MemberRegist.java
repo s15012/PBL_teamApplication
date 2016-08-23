@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class memberRegist extends AppCompatActivity {
+public class MemberRegist extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,8 @@ public class memberRegist extends AppCompatActivity {
 
             public void regChecker() {
                 String errMsg = "";
-                AlertDialog.Builder alert = new AlertDialog.Builder(memberRegist.this);
-                AlertDialog.Builder err_id = new AlertDialog.Builder(memberRegist.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(MemberRegist.this);
+                AlertDialog.Builder err_id = new AlertDialog.Builder(MemberRegist.this);
 
                 TextView tvName = (TextView) findViewById(R.id.regName);
                 String getName = tvName.getText().toString();
@@ -93,19 +93,25 @@ public class memberRegist extends AppCompatActivity {
                     err_id.show();
                 }
                 else{
-                    memberData mD = new memberData(memberRegist.this);
+                    MemberData mD = new MemberData(MemberRegist.this);
                     SQLiteDatabase mDB = mD.getWritableDatabase();
 
                         //列に対応する値をセットする
-                    ContentValues values = new ContentValues();
-                    values.put(memberData.Columns.NAME, getName);
-                    values.put(memberData.Columns.ADDRESS, getAddress);
-                    values.put(memberData.Columns.ID, getId);
-                    values.put(memberData.Columns.PASSWORD, getPass);
+                    ContentValues members = new ContentValues();
+                    members.put(MemberData.Columns.NAME, getName);
+                    members.put(MemberData.Columns.ADDRESS, getAddress);
+                    members.put(MemberData.Columns.ID, getId);
+                    members.put(MemberData.Columns.PASSWORD, getPass);
+
+                    ContentValues point = new ContentValues();
+                    point.put(MemberData.Columns.ID, getId);
+                    point.put(MemberData.Columns.POINT_NUM, 0);
 
                         //データベースに行を追加する
                     long ret;
-                    ret = mDB.insert(mD.TABLE_NAME, null, values);
+                    long rec;
+                    ret = mDB.insert(mD.TABLE_NAME, null, members);
+                    rec = mDB.insert(mD.TABLE_POINT, null, point);
                     if (!(ret == -1)) {
                         Log.d("DataBase", "行の追加に成功したよ");
 
@@ -115,25 +121,25 @@ public class memberRegist extends AppCompatActivity {
             }
 
             public void Viewer() {
-                Toast toast = Toast.makeText(memberRegist.this, "登録に成功しました", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(MemberRegist.this, "登録に成功しました", Toast.LENGTH_LONG);
                 toast.show();
 
-                Intent Login_intent = new Intent(memberRegist.this, MainActivity.class);
+                Intent Login_intent = new Intent(MemberRegist.this, MainActivity.class);
                 startActivity(Login_intent);
 
             }
 
             public boolean id_checker() {
-                memberData db = new memberData(memberRegist.this);
+                MemberData db = new MemberData(MemberRegist.this);
                 SQLiteDatabase dbRead = db.getReadableDatabase();
 
                 TextView tvId = (TextView) findViewById(R.id.regLoginID);
                 String getId = tvId.getText().toString();
 
-                String where = memberData.Columns.ID + "=?";
+                String where = MemberData.Columns.ID + "=?";
                 String [] args = { getId };
                 Cursor cursor = dbRead.query(
-                        memberData.TABLE_NAME, null, where, args, null, null, null);
+                        MemberData.TABLE_NAME, null, where, args, null, null, null);
 
                 if(cursor.moveToFirst()){
                     cursor.close();
@@ -154,7 +160,7 @@ public class memberRegist extends AppCompatActivity {
         Cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(memberRegist.this, MainActivity.class);
+                Intent intent = new Intent(MemberRegist.this, MainActivity.class);
                 startActivity(intent);
             }
         });

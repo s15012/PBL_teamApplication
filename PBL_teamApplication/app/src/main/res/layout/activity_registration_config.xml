@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.s15012.pbl_teamapplication.registration_config">
+    tools:context=".MemberConfig">
 
     <TextView
         android:id="@+id/registrationConfig"
@@ -54,7 +54,7 @@
         android:text="住所"
         />
     <EditText
-        android:id="@+id/editLive"
+        android:id="@+id/editAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
@@ -72,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:layout_below="@+id/editLive"
+        android:layout_below="@+id/editAddress"
         android:textSize="26sp"
         android:text="パスワード"
         />

@@ -15,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registration_config" />
+        <activity android:name=".MemberConfig" />
         <activity android:name=".Menu" />
-        <activity android:name=".memberRegist"></activity>
+        <activity android:name=".MemberRegist"></activity>
     </application>
 
 </manifest>
