@@ -60,6 +60,7 @@ public class Menu extends AppCompatActivity {
         goodsList_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                moveErr();
 
 
 
@@ -84,6 +85,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                moveErr();
 
                 /*
 
@@ -134,5 +136,10 @@ public class Menu extends AppCompatActivity {
         String account_id = data.getString("idSave",null);
         dbRead.delete(MemberData.TABLE_NAME, "id=?", new String[]{account_id});
         dbRead.close();
+    }
+    //未完成
+    private void moveErr() {
+        Intent moveErr_intent = new Intent(Menu.this, OrderControl.class);
+        startActivity(moveErr_intent);
     }
 }

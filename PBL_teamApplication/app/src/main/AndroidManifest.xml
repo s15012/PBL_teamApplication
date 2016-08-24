@@ -17,7 +17,9 @@
         </activity>
         <activity android:name=".MemberConfig" />
         <activity android:name=".Menu" />
-        <activity android:name=".MemberRegist"></activity>
+        <activity android:name=".MemberRegist" />
+        <activity android:name=".OrderControl" />
+        <activity android:name=".ProductList"></activity>
     </application>
 
 </manifest>
